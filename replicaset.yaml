@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+   labels: 
+      name: Testreplicaset
+spec:
+   selector:
+      matchLabels:
+        name: mywebapp    
+   template:
+      metadata:
+         labels:
+           name: mywebapp
+      spec:
+        containers:
+          - name: mywebapp
+            image: stacksimplify/kubenginx:1.0.0
+            ports:
+              - containerPort: 80
+   replicas: 1
+
+
+
+
+
+    
+
+
+  
